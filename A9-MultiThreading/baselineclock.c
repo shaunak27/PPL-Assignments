@@ -5,11 +5,10 @@
 #include<stdlib.h>
 int secs, mins, hrs;
 
-pthread_mutex_t lock;
 	
 
 void *seconds() {
-	 pthread_mutex_lock(&lock);
+	 
 	while(1) {
 		
 		sleep(1);
@@ -20,12 +19,12 @@ void *seconds() {
 		secs++;
 		
 	}
-	pthread_mutex_unlock(&lock);
+	
 }
 
 
 void *minutes() {
-	 pthread_mutex_lock(&lock);
+	 
 	while(1) {
 		if(secs == 60){
 			
@@ -35,12 +34,12 @@ void *minutes() {
 				
 		}
 	}
-	pthread_mutex_unlock(&lock);
+	
 }
 
 
 void *hour() {
-	 pthread_mutex_lock(&lock);
+	 
 	while(1) {
 
 		if(mins == 60){
@@ -53,7 +52,6 @@ void *hour() {
 
 	}
 	
-pthread_mutex_unlock(&lock);
 }
 
 
@@ -74,7 +72,7 @@ int main() {
 	scanf("%d", &secs);	
 
 	system("clear");
-	pthread_mutex_init(&lock, NULL);
+	
 	a = pthread_create(&t1, NULL, seconds, NULL);
 	b = pthread_create(&t2, NULL, minutes, NULL);
 	c = pthread_create(&t3, NULL, hour, NULL);
@@ -83,7 +81,7 @@ int main() {
 	pthread_join(t1, NULL);	
 	pthread_join(t2, NULL);
 	pthread_join(t3, NULL);
-	pthread_mutex_destroy(&lock);
+	
 		
 	return 0;
 }
