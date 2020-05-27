@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="shortcut icon" href="/media/favicon.ico" type="image/x-icon">
+</head>
+<body style="color: #cae8d5; background-color: #84a9ac;">
+    <div class="jumbotron" style="background-color:#204051;">
+        <center>
+            <h1>News</h1>
+            <a href="/news" class="fas fa-sync-alt fa-2x" style="float: right; color: #cae8d5; text-decoration: none;" data-toggle="tooltip" data-placement="bottom" title="Refresh"></a>
+            <a href="{% url 'login' %}" class="fas fa-arrow-circle-left fa-2x" style="float: left; color: #cae8d5; text-decoration: none;"></a>
+            <a href="/tracker" class="fas fa-chart-line fa-2x" style="float: right; color: #cae8d5; text-decoration: none; margin-right: 2rem;" data-toggle="tooltip" data-placement="bottom" title="Tracker"></a>
+        </center>
+    </div>
+    <div class="container" style="background-color: #3b6978; width: 100%; border-radius: 1rem; padding: 1rem;">
+        <div class="row">
+            <div class="col-6" style="border-right: 1px solid #cae8d5;">
+                    <h3 class="text-centre" style="margin-bottom:1.5rem; padding:1rem; background-color: #1b262c; border-radius: 1rem;"> News from WHO</h3>
+                    {% for n in who_news %}
+                    <h5><a href = "{{ n.0 }}" style="color: #cae8d5;"> -  {{n.1}} </a></h5>
+                    <hr>
+                    {% endfor %}
+                    <br>
+            </div>
+            <div class="col-6" >
+                    <h3 class="text-centre" style="margin-bottom:1.5rem; padding:1rem; background-color: #1b262c; border-radius: 1rem;">News from ToI</h3>
+                    {% for n in toi_news %}
+                    <h5><a href = "{{ n.0 }}" style="color: #cae8d5;"> - {{n.1}} </a></h5>
+                    <hr>
+                    {% endfor %}
+                    <br>
+            </div>
+        </div>
+ 
+ 
+</div>
+    <script
+src="http://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
