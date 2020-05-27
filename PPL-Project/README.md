@@ -3,7 +3,7 @@
 ## Title: CovidConnect
 
 ## Group Name: CovidCare
-## Shaunak Halbe 111803053
-## Hrishikesh Athalye 111803154
-## Viren Patil 111803155
-## Chinmay Dixit 111803169
+### Shaunak Halbe 111803053
+### Hrishikesh Athalye 111803154
+### Viren Patil 111803155
+### Chinmay Dixit 111803169
