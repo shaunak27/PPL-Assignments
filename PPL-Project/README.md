@@ -2,7 +2,7 @@
 
 ## Title: CovidConnect
 
-##Group Name: CovidCare
+## Group Name: CovidCare
 ## Shaunak Halbe 111803053
 ## Hrishikesh Athalye 111803154
 ## Viren Patil 111803155
